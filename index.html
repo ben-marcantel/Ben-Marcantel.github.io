@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body ng-app="BenApp">
+
+    <div ng-view></div>
+        <!-- //angular scripts -->
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-route/angular-route.min.js"></script>
+    <script src="./app/app.js"></script>
+
+    <!-- controllers -->
+    <script src="./app/controllers/HomeCtrl.js"></script>
+    <script src="./app/controllers/AboutCtrl.js"></script>
+    <script src="./app/controllers/PortCtrl.js"></script>
+
+    <!-- factories -->
+    <script src= "./app/factories/AnimaFactory.js"></script>
+      
+
+</body>
+</html>

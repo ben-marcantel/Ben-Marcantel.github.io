@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("BenApp").controller("AboutCtrl", function($scope, $location, $window) {
+angular.module("BenApp").controller("AboutCtrl", function($scope, $location, $window, ExpFactory){
     
     $scope.home = ()=>{
         $location.url("/home");
@@ -10,5 +10,6 @@ angular.module("BenApp").controller("AboutCtrl", function($scope, $location, $wi
         $location.url("/projects");
     };
 
+    ExpFactory.workExp();
     
 });

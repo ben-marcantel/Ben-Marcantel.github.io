@@ -4,11 +4,10 @@ angular.module("BenApp").factory("AnimaFactory", function($window, $document, $r
 
 
     let window = $window;
-$window.requestAnimationFrame = $window.requestAnimationFrame || $window.mozRequestAnimationFrame ||                $window.webkitRequestAnimationFrame || $window.msRequestAnimationFrame;
-let cancelAnimationFrame = $window.cancelAnimationFrame || $window.mozCancelAnimationFrame;
+    $window.requestAnimationFrame = $window.requestAnimationFrame || $window.mozRequestAnimationFrame ||                $window.webkitRequestAnimationFrame || $window.msRequestAnimationFrame;
+    let cancelAnimationFrame = $window.cancelAnimationFrame || $window.mozCancelAnimationFrame;
 
     let onload =()=> {
-        console.log("test");
         let  c = $document[0].getElementById("landing").getContext('2d');
         let x;
         let y;
@@ -37,27 +36,16 @@ let cancelAnimationFrame = $window.cancelAnimationFrame || $window.mozCancelAnim
             this.velocity= velocity;
     
             this.draw = function(){
-                // c.save();
                 c.beginPath();
-                // c.translate (1+this.x,1+this.y+1);
                 c.lineTo(this.x,this.y);
-                // c.rotate((10 * Math.PI)/ 180);
                 c.lineTo(this.x+this.y1+5,this.y+this.y1);
-                c.closePath();
-                // c.rotate((4 * Math.PI)/ 180);
                 c.lineTo(this.x1+5,this.y1);
-                c.lineTo(this.x1-this.y1,this.y1-this.y);
-                c.closePath();
-                
-                // c.arc(this.x, this.y, this.radians, 0, Math.PI * 2, false);
+                c.lineTo(this.x1-this.y1,this.y1-this.y);                
                 c.lineTo(this.radians+this.x1,this.velocity+this.y);
-                // c.restore();
+                c.closePath();                
                 c.shadowColor = "rgba(255,0,154.0.5)";
                 c.strokeStyle="rgb(255,0,154)";
-                c.shadowBlur = 25;
-                
-                // c.font="40px Futura";
-                
+                c.shadowBlur = 25;            
                 c.stroke();
             };
     
@@ -69,16 +57,16 @@ let cancelAnimationFrame = $window.cancelAnimationFrame || $window.mozCancelAnim
                 this.x1 = x + x1 + (Math.sin(this.radians)*150);
                 this.y1 += this.dy1;
                 this.radians += this.velocity;
-                if (this.x  > 520|| this.x  < 0) {
+                if (this.x  > 300|| this.x  < 0) {
                     this.dx = -this.dx;
                 }   
-                if (this.y > 240|| this.y < 0) {
+                if (this.y > 150|| this.y < 0) {
                     this.dy = -this.dy;
                 }
-                if (this.x1  > 520 || this.x1  < 0) {
+                if (this.x1  > 300 || this.x1  < 0) {
                     this.dx1 = -this.dx1;
                 }   
-                if (this.y1 > 240 || this.y1 < 0) {
+                if (this.y1 > 150|| this.y1 < 0) {
                     this.dy1 = -this.dy1;
                 }
                 this.draw();
@@ -88,7 +76,7 @@ let cancelAnimationFrame = $window.cancelAnimationFrame || $window.mozCancelAnim
             let homeArray;
             let implement = ()=>{
                 homeArray = [];
-                for(let i=0; i<3;i++){
+                for(let i=0; i<1;i++){
                     let x =  10;
                     let y =  10;
                     let x1 = 5;
@@ -106,28 +94,16 @@ let cancelAnimationFrame = $window.cancelAnimationFrame || $window.mozCancelAnim
     
             function drawObj(){
                 window.requestAnimationFrame(drawObj);
-                c.translate(c.Width/2,c.Height/2);
-                c.clearRect(0,0,540,540);
-                c.fillRect(0,0,540,540);
-                c.translate(c.Width/2,c.Height/2);
+                c.fillRect(-100,-100,1080,1080);
                 c.fillStyle="rgba(0,0,0,0.05)";
-                // c.translate (-1,0);
+                c.translate(c.Width/2,c.Height/2);
                     for (let i=0;i<homeArray.length; i++){
                         homeArray[i].update();
                     }
                 }
-           
-    
-    
         implement();    
         drawObj();
-        // c.scale(4/5,4/5);
-        c.translate(c.Width/3,c.Height/2);
-        
-    
-        
-    
+        c.translate(100,100);
      };
-
-     return {onload}
+    return {onload};
 });

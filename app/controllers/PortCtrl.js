@@ -9,6 +9,5 @@ angular.module("BenApp").controller("PortCtrl", function($scope, $location, $win
     $scope.home = ()=>{
         $location.url("/home");
     };
-
-    
+   
 });

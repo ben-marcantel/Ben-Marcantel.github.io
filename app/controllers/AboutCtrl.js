@@ -10,6 +10,7 @@ angular.module("BenApp").controller("AboutCtrl", function($scope, $location, $wi
         $location.url("/projects");
     };
 
-    ExpFactory.workExp();
+    $scope.story = ExpFactory.workExp();
+    $scope.story2 = ExpFactory.workExp2();
     
 });

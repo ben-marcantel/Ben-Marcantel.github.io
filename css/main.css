@@ -1,0 +1,71 @@
+body {
+  font-family: "Futura";
+  background-color: black;
+  color: aliceblue; }
+
+.nav {
+  margin: 1em;
+  list-style: none;
+  display: flex;
+  justify-content: space-around; }
+
+.nav li:hover {
+  color: #ff009a;
+  transition: 1000ms; }
+
+.list {
+  position: relative;
+  list-style: none;
+  z-index: 1; }
+
+#ben {
+  text-align: center; }
+
+#aboutMeStuff {
+  display: flex;
+  flex-direction: row;
+  list-style: none; }
+
+.aboutText {
+  list-style: none; }
+
+#bodyContent:hover {
+  background-color: rgba(0, 0, 90, 0.432);
+  transition: 1000ms; }
+
+#canvas {
+  margin: auto;
+  width: 50%; }
+
+.portList {
+  list-style: none;
+  display: flex; }
+
+.linkContainer {
+  max-width: 100%;
+  max-height: 100%;
+  overflow: scroll; }
+
+.portItem {
+  align-content: center; }
+
+.portItem:hover {
+  color: #ff009a;
+  transition: 1000ms; }
+
+.links {
+  list-style: none;
+  display: flex;
+  justify-content: space-around; }
+
+a:link {
+  color: aliceblue; }
+
+a:visited {
+  color: #ff009a; }
+
+a:hover {
+  color: #ff009a;
+  transition: 1000ms; }
+
+/*# sourceMappingURL=main.css.map */

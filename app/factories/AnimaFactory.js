@@ -42,9 +42,7 @@ angular.module("BenApp").factory("AnimaFactory", function($window, $document, $r
                 c.lineTo(this.x+this.y1,this.y+this.y1);
                 c.lineTo(this.x1,this.y);
                 c.lineTo(this.y1,this.x);
-                c.bezierCurveTo(this.x+200, this.y+100, this.x, this.y1, this.x1, this.y);
-                // c.bezierCurveTo(this.y+100, this.x+150, this.x, this.y, this.x1+10, this.y1);   
-                // c.bezierCurveTo(this.x+200, this.y+100, this.x1, this.y, this.y1-10, this.y);            
+                c.lineTo(this.y,this.x1);           
                 c.closePath();                
                 c.strokeStyle="rgb(255,0,154)";
                 c.stroke();
@@ -85,8 +83,8 @@ angular.module("BenApp").factory("AnimaFactory", function($window, $document, $r
                     let y =  1;
                     let x1 = 5;
                     let y1 =  5;
-                    let dx = 1;
-                    let dy = 1;
+                    let dx = 1/4;
+                    let dy = 1/4;
                     let dx1 = 1/2;
                     let dy1 = 1/2 ;
                     let pos = [];
